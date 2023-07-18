@@ -14,22 +14,25 @@ Application Tracking: Users can track the status and progress of their compensat
 
 # Technology Stack
 Front-end:  .NET Core 6.0 MVC, HTML5, CSS, JavaScript
-Back-end: Net core 6.0 web API,services and data access
+Back-end: Net core 6.0 web API, services, and data access
 Database: Microsoft SQL Server
-Architecture: Clean Architecture
+## Architecture:I initially developed the app as a .NET Core 6.0 MVC web application. However, I have started refactoring it into a clean architecture solution. As part of this refactoring, I have implemented a small feature that involves the ability to add and update the entity "Floor" using the clean architecture pattern.
+
+## In this pattern, the MVC front-end communicates with a typed HttpClient, which makes requests to a web API endpoint. The web API endpoint then calls a service, which in turn interacts with the repository to access the data store. This layered approach helps separate concerns and promotes modularity and maintainability in the codebase.
 
 Authentication: .NET Identity
 Dependency Injection: .NET Core Dependency Injection
 Exception Handling: Custom Middleware
 ORM: Entity Framework Core
-Solution Structure
-The project follows the principles of clean architecture and is structured into the following projects:
 
-Domain: Contains the core domain models, interfaces, and business logic.
-Application: Implements application-specific logic and use cases, acting as the application layer.
-Infrastructure: Provides implementations for data access, external services integration, and other infrastructure concerns.
-MVC: The MVC project responsible for the web user interface.
-API: The ASP.NET Core Web API project to expose functionalities for external integrations.
+The solution Structure for the clean architecture is :
+The project follows the principles of clean architecture and is structured into the following projects:
+  Domain: Contains the core domain models, interfaces, and business logic.
+  Contracts for modeling  web API
+  Application: Implements application-specific logic and use cases as the application layer.
+  Infrastructure: Provides implementations for data access, external services integration, and other infrastructure concerns.
+  MVC: The MVC project is responsible for the web user interface.
+  API: The ASP.NET Core Web API project exposes functionalities for external integrations.
 Getting Started
 To run the project locally, follow these steps:
 
@@ -58,12 +61,7 @@ Create a new branch for your feature or bug fix.
 Make your changes and commit them with descriptive messages.
 Push your changes to your forked repository.
 Submit a pull request to the original repository, describing the changes you made.
-License
-This project is licensed under the MIT License.
 
-Acknowledgements
-.NET Core Documentation
-Entity Framework Core Documentation
-ASP.NET Core Documentation
-Bootstrap Framework
-Feel free to modify and expand upon the provided content to accurately represent your project's structure, technologies, and guidelines. Remember to include any additional dependencies, installation instructions, and relevant details specific to your implementation.
+
+
+
