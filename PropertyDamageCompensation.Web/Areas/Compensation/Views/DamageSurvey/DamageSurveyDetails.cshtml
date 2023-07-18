@@ -1,0 +1,133 @@
+﻿@model  PropertyDamageCompensation.Web.Areas.Compensation.Models.DamageSurveyItemsViewModel
+@inject SignInManager<ApplicationUser> sinInManager
+@using System.Text.Json
+<div class="MGradient p-2 mb-md-3">
+    <h4>Property Damage assessement survey, managed by engineer : @ViewBag.EngineerName</h4>
+</div>
+
+<div class="mt-3">
+    <h5>Personal and Application Info</h5>
+</div>
+<hr />
+<div class="row">
+    <div class="row">
+        <div class="col-md-4">
+            Name : <strong>@ViewBag.Name</strong>
+        </div>
+        <div class="col-md-7">
+            Address : <strong>@ViewBag.Address</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            App Number : <strong>@ViewBag.AppNumber</strong>
+        </div>
+        <div class="col-md-4">
+            App date : <strong>@ViewBag.Appdate</strong>
+        </div>
+        <div class="col-md-4">
+            Building : <strong>@ViewBag.Building</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            Town : <strong>@ViewBag.Town</strong>
+        </div>
+        <div class="col-md-4">
+            Ikar : <strong>@ViewBag.Ikar</strong>
+        </div>
+    </div>
+</div>
+
+<hr/>
+@* display Survey information*@
+<div class="row">
+    <div class="col-md-9 mt-3 mb-3">
+        <h5>  Damage survey Info</h5>
+    </div>
+    <div class="col-md-3">
+        <h5 style="color:blue;"id="ongoingAction"></h5>
+    </div>
+</div>
+
+
+<div class=" ">
+    <div class="row">
+        <input hidden asp-for="DamageSurveyId" />
+        <input hidden asp-for="ApplicationId" />
+        <input hidden asp-for="PersonalInfoId"/>
+        <input hidden asp-for="EngineerId" />
+        
+        <div class="col-md-1">
+            <label asp-for="Date" class="control-label"></label>
+        </div>
+        <div class="col-md-3">
+            <input type="text" id="Date" name="Date" value="@Model.Date.ToString("dd/MM/yyyy")" class="form-control datepicker" />
+        </div>
+        <div class="col-md-3">
+            <h5> Engineer :  @ViewBag.EngineerName</h5>
+        </div>
+
+    </div>
+
+    <div class="border mt-md-3 p-md-2 mb-3">
+        <div class="row   align-items-center ">
+            <div class="col-md-3">Item</div>
+            <div class="col-md-2">Price</div>
+            <div class="col-md-2">Qty</div>
+            <div class="col-md-2">Total</div>
+        </div>
+        <div class="row  mt-md-1 align-items-center ">
+
+            <div id="ItemDefs" data-items='@Json.Serialize(ViewBag.ItemDefs)'></div>
+            <input id="DamageItemRecordId" hidden />
+            <div class="col-md-3">
+                <select id="DamageItemDefId" name="DamageItemDefId" class="form-control form-select" asp-items="@ViewBag.DamageItemDefId"></select>
+            </div>
+            <div class="col-md-2">
+                <input id="DamageItemDefPrice" type="number" name="DamageItemDefPrice" class="form-control" required/>
+            </div>
+            <div class="col-md-2">
+                <input id="Qty" name="Qty" type="number" class="form-control" required />
+            </div>
+            <div class="col-md-2">
+                <input readonly  class="form-control" id="TotalAmount" name="TotalAmount"/>
+            </div>
+            @if (sinInManager.IsSignedIn(User) && (User.IsInRole("Engineer") || User.IsInRole("Admin")))
+            {
+                <div class="col-md-3">
+                    <button id="Addbtn" class="btn btn-primary">Add item</button>
+                    <button hidden id="Savebtn"class="btn btn-primary">Save</button>
+                    <button hidden id="Cancelbtn" class="btn btn-primary">Cancel</button>
+                </div>
+            }
+        </div>
+    </div>
+    <div id="DamageItemAssessedList" class="mt-4">
+        @if (Model!=null)
+        {
+            @if (Model.ListOfDamageItems == null)
+            {
+                <partial name="_DamageItemAssessedListPartialView" model="null" />
+            }
+            else
+            {
+                <partial name="_DamageItemAssessedListPartialView" model="@Model.ListOfDamageItems" />
+            }
+        }
+        else
+            {
+                <partial name="_DamageItemAssessedListPartialView" model="null" />
+            }
+
+    </div>
+    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_ManageDamageSurveyPartialView");
+        await Html.RenderPartialAsync("_DatePartialView");
+    }
+}

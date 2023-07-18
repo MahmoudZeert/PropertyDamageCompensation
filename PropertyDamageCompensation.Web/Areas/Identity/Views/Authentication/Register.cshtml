@@ -1,0 +1,67 @@
+﻿ @model PropertyDamageCompensation.Web.Areas.Identity.Models.UserRegistrationViweModel
+
+@{
+    Layout ="~/Views/Shared/_LayoutLR.cshtml";
+  }
+  <div  class="  d-flex mt-5 justify-content-center flex-column " style="min-height:70vh">
+        <form  class =" p-4" asp-area="Identity" asp-controller="Authentication" asp-action="Register" >
+            <div class="row">                                    
+                <div id="alert_placeholder_Login">
+
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class=" col-sm-5 offset-sm-2 mt-2  ">
+                    <div asp-validation-summary="ModelOnly" class="text-danger">
+
+                    </div>
+                </div>
+            </div>                              
+            <div class="row  justify-content-center mb-3">
+                <div class="col-sm-2    text-sm-end">
+                    <label asp-for="EmailAddress" class="control-label  pt-2">Email </label>
+                </div>
+                <div class="col-sm-5">
+                    <input autofocus asp-for="EmailAddress" placeholder="Enter your email address" class="form-control " />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>                                  
+            </div>
+            <div class=" row  justify-content-center mb-3">
+                <div class="col-sm-2 ps-sm-5 text-sm-end">
+                    <label asp-for="Password" class="control-label pt-2">Password </label>
+                </div>                    
+                <div class="col-sm-5">                                    
+                    <input asp-for="Password" placeholder="Enter your password" class="form-control " />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>                                                       
+            </div>
+            <div class=" row  justify-content-center">
+                <div class="col-sm-2 ps-sm-1  text-sm-end">
+                    <label asp-for="ConfirmPassword" class="control-label pt-2">Confirm Password </label>
+                </div>                    
+                <div class="col-sm-5">                                    
+                    <input asp-for="ConfirmPassword" placeholder="Confirm your password" class="form-control " />
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                </div>                                                       
+            </div>
+            <div class=" row justify-content-center">
+                <div class=" col-sm-5 offset-sm-2 mt-2">
+                    <label asp-for="AcceptTerms" class="form-label ">
+                        <input class="form-check-input" asp-for="AcceptTerms" />
+                        @Html.DisplayNameFor(m => m.AcceptTerms)
+                    </label>
+                </div>
+            </div>
+            <div class="row  justify-content-center ">
+                <div class=" col-sm-5  offset-sm-5  ">
+                        <button type="submit"  class="btn btn-primary m-2">Register</button>
+                       @*<a type="button"  class="btn btn-primary m-2" asp-area="" asp-controller="Home" asp-action="Index" >Cancel</a>*@
+                </div>
+            </div>
+        </form>
+  </div> 
+@section Scripts {
+    @{
+         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+     }
+}

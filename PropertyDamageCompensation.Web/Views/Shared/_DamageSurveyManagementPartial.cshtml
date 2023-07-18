@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> sinInManager
+@if (sinInManager.IsSignedIn(User) && (User.IsInRole("Engineer") ||
+User.IsInRole("Chief Engineer") || User.IsInRole("Admin")))
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Manage Surveys</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="Application" asp-action="SubmittedApps">Submitted applications</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="DamageItemDef" asp-action="Index">Damage Item Definition</a>
+        </div>
+        </li>
+}
+
+

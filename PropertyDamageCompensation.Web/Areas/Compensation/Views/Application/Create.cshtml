@@ -1,0 +1,99 @@
+﻿@model PropertyDamageCompensation.Web.Areas.Compensation.Models.ApplicationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="MGradient">
+    <h2>Create / Application </h2>
+<hr />
+</div>
+
+<div class="row">
+        <form class="row" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="PersonalInfoId" type="hidden" value="@ViewBag.PersonalId" />
+            <div class="form-group col-md-3">
+                <h6 >Name : @ViewBag.FullName</h6>
+            </div>
+            <div class="form-group col-md-3">
+                <h6  >Date Of Birth : @ViewBag.DateOfBirth</h6>
+            </div>
+            <div class="form-group col-md-2">
+                <h6  >Phone : @ViewBag.Phone</h6>
+            </div>
+            <div class="form-group col-md-4">
+                <h6 >Address : @ViewBag.AddressStreetLivingTown</h6>
+            </div>
+            <hr />
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="AppDate" class="control-label"></label>
+                <input type="text"id ="AppDate" name="AppDate" class="form-control datepicker" />
+                <span asp-validation-for="AppDate" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3  mt-3  mt-3">
+                <label asp-for="AppNumber" class="control-label"></label>
+                <input asp-for="AppNumber" class="form-control" />
+                <span asp-validation-for="AppNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3  mt-3">
+                <label asp-for="PropertTypeId" class="control-label"></label>
+                <select asp-for="PropertTypeId" class="form-control form-select" asp-items="ViewBag.PropertyTypeId"></Select>
+                <span asp-validation-for="PropertTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="Building" class="control-label"></label>
+                <input asp-for="Building" class="form-control" />
+                <span asp-validation-for="Building" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="Block" class="control-label"></label>
+                <input asp-for="Block" class="form-control" />
+                <span asp-validation-for="Block" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="FloorId" class="control-label"></label>
+                <Select asp-for="FloorId" class="form-control form-select" asp-items="ViewBag.FloorId"></Select>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="Appartment" class="control-label"></label>
+                <input asp-for="Appartment" class="form-control" />
+                <span asp-validation-for="Appartment" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="Ikar" class="control-label"></label>
+                <input asp-for="Ikar" class="form-control" />
+                <span asp-validation-for="Ikar" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="SubIkar" class="control-label"></label>
+                <input asp-for="SubIkar" class="form-control" />
+                <span asp-validation-for="SubIkar" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3 mt-3">
+                <label asp-for="TownId" class="control-label"></label>
+                <select asp-for="TownId" class="form-control form-select" asp-items="ViewBag.TownId"></Select>
+            </div>
+            <div class="row  mt-5 justify-content-center">
+                <div class="col-md-6 text-md-center">
+                     <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+      await Html.RenderPartialAsync("_DatePartialView"); }
+}

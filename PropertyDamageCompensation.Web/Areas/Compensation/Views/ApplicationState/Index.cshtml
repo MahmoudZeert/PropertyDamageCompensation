@@ -1,0 +1,52 @@
+﻿@inject SignInManager<ApplicationUser> sinInManager
+@model IEnumerable<PropertyDamageCompensation.Web.Areas.Compensation.Models.ApplicationStateViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="MGradient p-2">
+    <h3>List Of Application states</h3>
+</div>
+
+@if (sinInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+<div class="m-3">
+    <a style="font-weight:bolder" asp-action="Create">Create New</a>
+</div>   
+}
+<table class="table">
+    <thead class="MTableHead">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="color:green">
+                @Html.DisplayNameFor(model => model.IsDefault)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="color:blue">
+                @Html.DisplayFor(modelItem=>item.IsDefault)
+            </td>
+            <td align="right" style="font-weight:bolder">
+
+                @if ( sinInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                @*<a style="color:darkred" asp-action="MakeDefault" asp-route-id="@item.Id">Make Default</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,91 @@
+﻿@model PropertyDamageCompensation.Web.Areas.Compensation.Models.PersonalInfoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="MGradient">
+    <h3>Please, enter Personal Information  </h3>
+    <hr/>
+</div>
+
+<div class="row">
+    @*<div class="col-md-4">*@
+        <form class="row" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@*            <div class="form-group ">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>*@
+            <div class="col-md-4 form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" autofocus class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" />
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input type="text" name="dateofbirth" id="dateofbirth"  class="form-control datepicker" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group  mt-3">
+                <label asp-for="PlaceOfBirthTownId" class="control-label"></label>
+                <select asp-for="PlaceOfBirthTownId" class ="form-control form-select" asp-items="ViewBag.PlaceOfBirthTownId"></select>
+            </div>
+            <div class="col-md-4 form-group  mt-3">
+                <label asp-for="RegisterId" class="control-label"></label>
+                <input asp-for="RegisterId" class="form-control" />
+                <span asp-validation-for="RegisterId" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group  mt-3">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group  mt-3">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="col-md-4 form-group mt-3 mb-3">
+                <label asp-for="LivingTownId" class="control-label"></label>
+                <select asp-for="LivingTownId" class ="form-control form-select" asp-items="ViewBag.LivingTownId"></select>
+            </div>
+            <div class="row form-group justify-content-center ">
+                <div class="col-md-4 text-md-center mt-3">
+                <input type="submit" value="Create" class="btn btn-primary " />
+                <a class="btn btn-primary"asp-controller="Authentication" asp-area="Identity" asp-action="Switch">Cancel</a>
+            </div>
+            </div>
+        </form>
+    </div>
+@*</div>*@
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        await Html.RenderPartialAsync("_DatePartialView");
+
+}
+
+}

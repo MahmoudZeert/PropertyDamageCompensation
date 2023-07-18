@@ -1,0 +1,81 @@
+﻿@model List<PropertyDamageCompensation.Web.Areas.Compensation.Models.DamageItemAssessedViewModel>
+@inject SignInManager<ApplicationUser> sinInManager
+    <div class="card border-3">
+        <div class="card-header">
+            <h5>List of Damaged Items</h5>
+        </div>
+        <div class="card-body">
+            <div class="overflow-auto border-5" style="height:310px">
+                <table id="IemTableId" class="table table-striped table-bordered  table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Unit Price</th>
+                            <th>Qty</th>
+                            <th>Total Amount</th>
+                            <th style="text-align:center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td hidden>
+                                        @Html.DisplayFor(mitem=>item.Id)
+                                    </td>
+                                    <td hidden>
+                                        @Html.DisplayFor(mitem=>item.DamageItemDefId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(mitem=>item.DamageItemdefName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(mitem=>item.DamageItemDefPrice)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(mitem=>item.Qty)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(mitem=>item.TotalAmount)
+                                    </td>
+                                    <td style="text-align:center">
+                                    @if (sinInManager.IsSignedIn(User) && (User.IsInRole("Admin") || User.IsInRole("Engineer")))
+                                    {
+
+                                        <button id="Editbtn" class="btn btn-primary" style="font-weight:bolder">Edit</button>
+                                        <button id="Deletebtn" class="btn btn-danger" style="font-weight:bolder">Delete</button>
+                                    }
+
+                                        
+
+
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Total Amounts </h5>
+                </div>
+                <div class="col-md-2">
+                    <label id="DamageSurveyTotalAmoutLabel"></label>
+                </div>
+                <div class="col-md-2">
+                    <h5>Total count</h5>
+                </div>
+                <div class="col-md-2">
+                    <label id="DamageSurveyTotalNumberLabel"></label>
+                </div>
+              </div>
+           
+        </div>
+    </div>
+   

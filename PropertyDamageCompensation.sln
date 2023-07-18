@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDamageCompensation.Web", "PropertyDamageCompensation.Web\PropertyDamageCompensation.Web.csproj", "{69985090-E243-4E60-921A-2E4682BF55F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDamageCompensation.API", "PropertyDamageCompensation.API\PropertyDamageCompensation.API.csproj", "{6BBAAE5D-530B-4D7E-AE9C-7F9BC8D9D58A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDamageCompensation.Application", "PropertyDamageCompensation.Application\PropertyDamageCompensation.Application.csproj", "{48ACF7A2-FF69-4A12-834A-6B7053CCBE57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDamageCompensation.Domain", "PropertyDamageCompensation.Domain\PropertyDamageCompensation.Domain.csproj", "{6E2C6505-55AB-44E3-8377-E758891EB706}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyDamageCompensation.Infrastructure", "PropertyDamageCompensation.Infrastructure\PropertyDamageCompensation.Infrastructure.csproj", "{A196DE29-9895-467B-BA13-093E4B5C7CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyDamageCompensation.Contracts", "PropertyDamageCompensation.Contracts\PropertyDamageCompensation.Contracts.csproj", "{FCEE8C06-00F2-4844-AB66-BFDECE0145D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69985090-E243-4E60-921A-2E4682BF55F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69985090-E243-4E60-921A-2E4682BF55F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69985090-E243-4E60-921A-2E4682BF55F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69985090-E243-4E60-921A-2E4682BF55F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBAAE5D-530B-4D7E-AE9C-7F9BC8D9D58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBAAE5D-530B-4D7E-AE9C-7F9BC8D9D58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBAAE5D-530B-4D7E-AE9C-7F9BC8D9D58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBAAE5D-530B-4D7E-AE9C-7F9BC8D9D58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48ACF7A2-FF69-4A12-834A-6B7053CCBE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48ACF7A2-FF69-4A12-834A-6B7053CCBE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48ACF7A2-FF69-4A12-834A-6B7053CCBE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48ACF7A2-FF69-4A12-834A-6B7053CCBE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2C6505-55AB-44E3-8377-E758891EB706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2C6505-55AB-44E3-8377-E758891EB706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2C6505-55AB-44E3-8377-E758891EB706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2C6505-55AB-44E3-8377-E758891EB706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A196DE29-9895-467B-BA13-093E4B5C7CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A196DE29-9895-467B-BA13-093E4B5C7CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A196DE29-9895-467B-BA13-093E4B5C7CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A196DE29-9895-467B-BA13-093E4B5C7CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEE8C06-00F2-4844-AB66-BFDECE0145D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEE8C06-00F2-4844-AB66-BFDECE0145D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEE8C06-00F2-4844-AB66-BFDECE0145D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEE8C06-00F2-4844-AB66-BFDECE0145D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE1D9C3D-DDD7-4C88-9B44-A8423BDD6539}
+	EndGlobalSection
+EndGlobal

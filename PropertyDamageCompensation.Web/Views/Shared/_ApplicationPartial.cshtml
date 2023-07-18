@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@inject SignInManager<ApplicationUser> sinInManager
+@if ( sinInManager.IsSignedIn(User))
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Application</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="PersonalInfo" asp-action="Details1" asp-route-userId=@User.FindFirst(ClaimTypes.NameIdentifier).Value>Personal info</a>     
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="Application"  asp-action="Index">Application</a>
+            @if ( User.IsInRole("Admin") || User.IsInRole("Chief Engineer"))
+            {
+               <a class="dropdown-item" asp-area="Compensation" asp-controller="EndgineerDistrict"  asp-action="Index">Engineer districts</a>
+            }
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="ApplicationState" asp-action="Index">Application State</a>
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="PropertyType" asp-action="Index">Property Type</a>
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="Floor" asp-action="Index">Floors</a>
+            <div class="dropdown-divider"></div>          
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="Town" asp-action="Index">Towns</a>
+             <a class="dropdown-item" asp-area="Compensation" asp-controller="District" asp-action="Index">Districts</a>
+        </div>
+</li>
+}
+

@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> sinInManager
+@if ( sinInManager.IsSignedIn(User))
+{
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Payment</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="DamageSurveySubmitted" asp-action="Index">Submitted Surveys</a>     
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="Payments"  asp-action="Index">Payments</a>
+            <a class="dropdown-item" asp-area="Compensation" asp-controller="executePayment" asp-action="ExecutePayments">execute payments</a>
+        </div>
+</li>
+}
+

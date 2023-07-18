@@ -1,0 +1,32 @@
+﻿@model PropertyDamageCompensation.Web.Areas.Compensation.Models.TownViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="MGradient">
+    <h3>Details</h3>
+    <h4>Town</h4>
+    <hr />
+</div>
+
+<div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DistrictName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DistrictName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary " asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
+    <a class="btn btn-primary " asp-action="Index">Back to List</a>
+</div>

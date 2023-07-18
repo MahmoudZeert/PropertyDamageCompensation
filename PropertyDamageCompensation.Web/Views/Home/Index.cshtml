@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+     <div class="row align-items-center" style="min-height:15vh">
+         <div class="col-md-12" >
+            <h1 class="display-6">Welcome To Property Damage Compensation system</h1>
+        </div> 
+    </div> 
+      <div class="row align-items-center" >
+        <div class="col-md-12 d-flex justify-content  ">
+            <h5> Applicants for property damage compensation must first register, fill out 
+                    Personal and Application forms, and submit their application to the competent 
+                    authority for examination.
+             </h5>
+        </div>
+      </div>  
+      <div class="row border bg-image align-items-center" 
+            style="background-image: url('/pictures/damagedhouse.jpg');height: 55vh;">
+    </div>
+
+@section Scripts {
+    @{
+         //await Html.RenderPartialAsync("~/Areas/Identity/Views/Shared/_AuthScriptsPartial.cshtml");
+         await Html.RenderPartialAsync("_ValidationScriptsPartial");
+     }
+}

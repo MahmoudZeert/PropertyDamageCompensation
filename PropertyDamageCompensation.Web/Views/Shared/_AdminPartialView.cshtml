@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@inject SignInManager<ApplicationUser> sinInManager
+@if ( sinInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Admin</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-area="Identity" asp-controller="ManageRoles" asp-action="Index" >Manage Roles</a>
+                    <a class="dropdown-item" asp-area="Identity" asp-controller="Authentication" asp-action="ListOfOrganizationUsers">Manage Users</a>
+                </div>
+            </li>
+    </ul>
+}

@@ -1,0 +1,27 @@
+﻿@model PropertyDamageCompensation.Web.Areas.Compensation.Models.ApplicationStateViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="MGradient">
+    <h3>Details</h3>
+    <h4>Application State</h4>
+    <hr />
+</div>
+
+<div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<div class="mt-3">
+    <a class="btn btn-primary " asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> 
+    <a class="btn btn-primary " asp-action="Index">Back to List</a>
+</div>
