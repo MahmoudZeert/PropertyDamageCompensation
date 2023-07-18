@@ -38,9 +38,8 @@ To run the project locally, follow these steps:
 
 Clone the repository:
 
-bash
-Copy code
-git clone https://github.com/your-username/property-damage-compensation.git
+download code.
+
 Open the solution in Visual Studio or your preferred development environment.
 
 Update the connection string in the appsettings.json file to point to your Microsoft SQL Server database.
