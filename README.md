@@ -27,12 +27,12 @@ ORM: Entity Framework Core
 
 The solution Structure for the clean architecture is :
 The project follows the principles of clean architecture and is structured into the following projects:
-  Domain: Contains the core domain models, interfaces, and business logic.
-  Contracts for modeling  web API
-  Application: Implements application-specific logic and use cases as the application layer.
-  Infrastructure: Provides implementations for data access, external services integration, and other infrastructure concerns.
-  MVC: The MVC project is responsible for the web user interface.
-  API: The ASP.NET Core Web API project exposes functionalities for external integrations.
+  * Domain: Contains the core domain models, interfaces, and business logic.
+  * Contracts for modeling  web API.
+  * Application: Implements application-specific logic and use cases as the application layer.
+  * Infrastructure: Provides implementations for data access, external services integration, and other infrastructure concerns.
+  * MVC Web: The MVC project is responsible for the web user interface.
+  * Web API: The ASP.NET Core Web API project exposes functionalities for external integrations.
 Getting Started
 To run the project locally, follow these steps:
 
@@ -52,14 +52,7 @@ Start the application.
 
 Access the application in your web browser at http://localhost:port.
 
-Contribution Guidelines
-If you want to contribute to this project, please follow these steps:
 
-Fork the repository on GitHub.
-Create a new branch for your feature or bug fix.
-Make your changes and commit them with descriptive messages.
-Push your changes to your forked repository.
-Submit a pull request to the original repository, describing the changes you made.
 
 
 
