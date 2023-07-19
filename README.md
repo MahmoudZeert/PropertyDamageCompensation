@@ -6,8 +6,8 @@ submit personal information, create application files, and track the progress of
 In this project, there are two distinct user types:
 
 + Applicant Users:
-User Registration: Applicants can sign up for an account to access the application.
-User Login: Registered applicants can log in to their accounts.
+  + User Registration: Applicants can sign up for an account to access the application.
+  + User Login: Registered applicants can log in to their accounts.
 Profile Management: Applicants can manage their personal information and keep it up to date.
 Application Creation: Applicants can create application files by filling out the necessary forms.
 Application Submission: Applicants can submit their application files for evaluation.
