@@ -8,16 +8,16 @@ In this project, there are two distinct user types:
 + Applicant Users:
   + User Registration: Applicants can sign up for an account to access the application.
   + User Login: Registered applicants can log in to their accounts.
-Profile Management: Applicants can manage their personal information and keep it up to date.
-Application Creation: Applicants can create application files by filling out the necessary forms.
-Application Submission: Applicants can submit their application files for evaluation.
-Application Tracking: Applicants can track the status and progress of their compensation claims within the system.
+  + Profile Management: Applicants can manage their personal information and keep it up to date.
+  + Application Creation: Applicants can create application files by filling out the necessary forms.
+  + Application Submission: Applicants can submit their application files for evaluation.
+  + Application Tracking: Applicants can track the status and progress of their compensation claims within the system.
 + Employee Users:
-User Registration: Application administrators can create user accounts for employees with different roles.
-User Login: Registered employees can log in to their accounts.
-Profile Management: Employees can manage their personal information and update it when necessary.
-Application Evaluation: Employees with various roles (e.g., Engineer, General Manager, Finance Responsible) can evaluate the submitted applications based on their expertise.
-Payment Processing: Employees can manage the compensation process, including processing payments for approved claims.
+  + User Registration: Application administrators can create user accounts for employees with different roles.
+  + User Login: Registered employees can log in to their accounts.
+  + Profile Management: Employees can manage their personal information and update it when necessary.
+  + Application Evaluation: Employees with various roles (e.g., Engineer, General Manager, Finance Responsible) can evaluate the submitted applications based on their expertise.
+  + Payment Processing: Employees can manage the compensation process, including processing payments for approved claims.
 
 # Technology Stack
 - Front-end:  .NET Core 6.0 MVC, HTML5, CSS, JavaScript
