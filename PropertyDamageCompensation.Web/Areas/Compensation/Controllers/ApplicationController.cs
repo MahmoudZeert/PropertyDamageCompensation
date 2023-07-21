@@ -296,7 +296,7 @@ namespace PropertyDamageCompensation.Web.Areas.Compensation.Controllers
                                            ).SingleOrDefaultAsync();
 
 
-                    var application = new PropertyDamageCompensation.Domain.Entities.Application
+                    var application = new Entities.Application
                     {
                         PersonalInfoId = applicationViewModel.PersonalInfoId,
                         AppDate = applicationViewModel.AppDate,
