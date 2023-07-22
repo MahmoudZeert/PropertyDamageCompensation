@@ -300,7 +300,7 @@ namespace PropertyDamageCompensation.Web.Areas.Compensation.Controllers
                     {
                         PersonalInfoId = applicationViewModel.PersonalInfoId,
                         AppDate = applicationViewModel.AppDate,
-                        AppNumber = GetAppNumber(),
+                       // AppNumber = GetAppNumber(),
                         PropertTypeId = applicationViewModel.PropertTypeId,
                         Street = applicationViewModel.Street,
                         Building = applicationViewModel.Building,
